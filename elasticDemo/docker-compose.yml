@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  springapp:
+    container_name: springboot-app
+#    image: myelasticimage1010:latest
+    build: ./
+    ports:
+      - "6060:6060"
+    depends_on:
+      - elasticsearch
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.9
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+
