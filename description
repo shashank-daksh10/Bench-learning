@@ -1,0 +1,2 @@
+this is a simple POC where i have made a kafka topic and is sending String message as well as json in them ,and 
+then consuming them via consumer 
